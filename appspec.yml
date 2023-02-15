@@ -7,5 +7,6 @@ hooks:
   BeforeInstall:
     - location: /scripts/install_dependencies
       runas: root
+  AfterInstall:
     - location: /scripts/start_server
       runas: root 
