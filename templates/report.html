@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+td, th {
+  border: 2px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(odd) {
+  background-color: #dddddd;
+}
+button {
+           font-family: tahoma;
+           margin-top: 20px;
+           margin-right: 20px;
+           position:absolute;
+           top:0;
+           right:0;
+ }
+ body {
+  background-size: 100%;
+  background-image:url({{url_for('static', filename='tech.jpg')}});
+  
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+</head>
+<body>
+    <a href="{{ url_for('home') }}"> <button> Home </button></a>
+    <h1 align="center"> Total Sales Report </h1><br>
+    <table>
+        <tr>
+            <th> CUST_ID  </th>
+            <th> CUST_NAME  </th>
+            <th> CUST_CELLNO  </th>
+            <th> TOTAL_SALES  </th>
+        </tr>
+      {% for row in sa_report  %}
+      <tr>
+        <td> {{ row.0 }} </td>
+        <td> {{ row.1 }} </td>
+        <td> {{ row.2 }} </td>
+        <td> {{ row.3 }} </td>
+      </tr>
+      {% endfor %}
+      </table>
+</body>
+</html>
