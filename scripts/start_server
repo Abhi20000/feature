@@ -1,2 +1,2 @@
 cd /home
-sudo python3 Abhi.py
+sudo nohup python3 Abhi.py
