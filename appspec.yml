@@ -1,0 +1,11 @@
+version: 0.0
+os: linux
+files:
+  - source: .
+    destination /home
+hooks:
+  BeforeInstall:
+    - location: /scripts/install_dependencies
+      runas: root
+    - location: /scripts/start_server
+      runas: root 
