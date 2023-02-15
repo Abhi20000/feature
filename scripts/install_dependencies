@@ -1,4 +1,3 @@
 sudo yum update
-sudo yum -y install python3
-sudo pip3 -install mysql.connector
-sudo pip3 -y install flask
+sudo pip3 install mysql.connector
+sudo pip3 install flask
