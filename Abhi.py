@@ -31,7 +31,7 @@ def customer():
         c_mail = request.form.get('c_mail')
         conn.execute(f"SELECT cust_id from customer where cust_id = { request.form.get('c_id') } ")
         if conn.fetchall() :
-          flash('Customer Is Already Present. Try With Unique Customer Id')
+          flash('Customer Is Already Present in database . Try With Unique Customer Id')
           conn.execute("SELECT * FROM customer")
           p_cust_data = conn.fetchall()
           mydb.commit()
